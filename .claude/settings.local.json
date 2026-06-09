@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cp C:/Users/lyz/Desktop/img/*.png D:/newbee-mall/app/src/main/res/drawable/)",
+      "Bash(cp C:/Users/lyz/Desktop/img/*.jpeg D:/newbee-mall/app/src/main/res/drawable/)",
+      "Bash(node *)",
+      "WebFetch(domain:172.21.3.8)",
+      "Bash(curl -X POST \"http://172.21.3.8:28019/mallapi/manage-api/v1/adminUser\" -H \"Content-Type: application/json\" -d '{\"userName\":\"admin\",\"password\":\"123456\"}')",
+      "Bash(grep -E \"\\\\.\\(jpg|jpeg|png|webp\\)$\")",
+      "WebFetch(domain:github.com)",
+      "WebSearch",
+      "Bash(git init *)"
+    ]
+  }
+}
