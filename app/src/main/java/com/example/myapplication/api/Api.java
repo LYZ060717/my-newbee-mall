@@ -31,6 +31,8 @@ public class Api {
 
     // ==================== 首页模块 ====================
 
+    /** 首页聚合数据（轮播图+热销+新品+推荐） */
+    public static final String INDEX_INFOS = BASE_URL + "/index-infos";
     /** 首页轮播图 */
     public static final String INDEX_CAROUSEL = MANAGE_BASE_URL + "/carousels";
     /** 首页热销商品 */
@@ -45,7 +47,12 @@ public class Api {
     /** 商品列表 */
     public static final String GOODS_LIST = BASE_URL + "/goods/list";
     /** 商品详情 */
-    public static final String GOODS_DETAIL = BASE_URL + "/goods/detail";
+    public static final String GOODS_DETAIL = BASE_URL + "/goods/detail/";
+
+    // ==================== 搜索模块 ====================
+
+    /** 商品搜索 */
+    public static final String SEARCH = BASE_URL + "/search";
 
     // ==================== 分类模块 ====================
 
@@ -77,4 +84,17 @@ public class Api {
     public static final String ORDER_CANCEL = BASE_URL + "/order/cancel";
     /** 确认收货 */
     public static final String ORDER_CONFIRM = BASE_URL + "/order/confirm";
+
+    // ==================== 地址模块 ====================
+
+    /** 地址列表 */
+    public static final String ADDRESS_LIST = BASE_URL + "/address/list";
+    /** 添加地址 */
+    public static final String ADDRESS_ADD = BASE_URL + "/address/add";
+    /** 修改地址 */
+    public static final String ADDRESS_UPDATE = BASE_URL + "/address/update";
+    /** 删除地址 */
+    public static final String ADDRESS_DELETE = BASE_URL + "/address/delete";
+    /** 设置默认地址 */
+    public static final String ADDRESS_DEFAULT = BASE_URL + "/address/default";
 }

@@ -1,0 +1,8 @@
+com.zaaach.citypicker-pngs-0 D:\newbee-mall\citypicker\build\generated\res\pngs\debug
+com.zaaach.citypicker-updated_navigation_xml-1 D:\newbee-mall\citypicker\build\generated\updated_navigation_xml\debug
+com.zaaach.citypicker-mergeDebugResources-2 D:\newbee-mall\citypicker\build\intermediates\incremental\debug\mergeDebugResources\merged.dir
+com.zaaach.citypicker-mergeDebugResources-3 D:\newbee-mall\citypicker\build\intermediates\incremental\debug\mergeDebugResources\stripped.dir
+com.zaaach.citypicker-debug-4 D:\newbee-mall\citypicker\build\intermediates\merged_res\debug\mergeDebugResources
+com.zaaach.citypicker-debug-5 D:\newbee-mall\citypicker\build\intermediates\packaged_res\debug\packageDebugResources
+com.zaaach.citypicker-debug-6 D:\newbee-mall\citypicker\src\debug\res
+com.zaaach.citypicker-main-7 D:\newbee-mall\citypicker\src\main\res

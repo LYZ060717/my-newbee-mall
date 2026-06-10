@@ -48,4 +48,6 @@ dependencies {
     implementation("io.github.youth5201314:banner:2.2.3")
     // Glide图片加载
     implementation("com.github.bumptech.glide:glide:4.12.0")
+    // CityPicker城市选择器
+    implementation(project(":citypicker"))
 }

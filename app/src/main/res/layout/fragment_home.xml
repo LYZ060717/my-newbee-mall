@@ -5,6 +5,9 @@
     android:background="#F5F5F5">
 
     <!-- 可滚动区域：轮播图 + 金刚区 + 商品区 -->
+
+    <!-- 顶部导航栏（浮在轮播图上方，半透明） -->
+
     <androidx.core.widget.NestedScrollView
         android:id="@+id/scroll_view"
         android:layout_width="match_parent"
@@ -44,11 +47,13 @@
                         android:gravity="center_horizontal"
                         android:orientation="vertical"
                         android:paddingVertical="6dp">
+
                         <ImageView
                             android:layout_width="44dp"
                             android:layout_height="44dp"
                             android:contentDescription="新蜂超市"
                             android:src="@drawable/nav_supermarket" />
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -65,11 +70,13 @@
                         android:gravity="center_horizontal"
                         android:orientation="vertical"
                         android:paddingVertical="6dp">
+
                         <ImageView
                             android:layout_width="44dp"
                             android:layout_height="44dp"
                             android:contentDescription="新蜂服饰"
                             android:src="@drawable/nav_clothing" />
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -86,11 +93,13 @@
                         android:gravity="center_horizontal"
                         android:orientation="vertical"
                         android:paddingVertical="6dp">
+
                         <ImageView
                             android:layout_width="44dp"
                             android:layout_height="44dp"
                             android:contentDescription="全球购"
                             android:src="@drawable/nav_global" />
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -107,11 +116,13 @@
                         android:gravity="center_horizontal"
                         android:orientation="vertical"
                         android:paddingVertical="6dp">
+
                         <ImageView
                             android:layout_width="44dp"
                             android:layout_height="44dp"
                             android:contentDescription="新蜂生鲜"
                             android:src="@drawable/nav_fresh" />
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -128,11 +139,13 @@
                         android:gravity="center_horizontal"
                         android:orientation="vertical"
                         android:paddingVertical="6dp">
+
                         <ImageView
                             android:layout_width="44dp"
                             android:layout_height="44dp"
                             android:contentDescription="新蜂到家"
                             android:src="@drawable/nav_home" />
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -156,11 +169,13 @@
                         android:gravity="center_horizontal"
                         android:orientation="vertical"
                         android:paddingVertical="6dp">
+
                         <ImageView
                             android:layout_width="44dp"
                             android:layout_height="44dp"
                             android:contentDescription="充值缴费"
                             android:src="@drawable/nav_recharge" />
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -177,11 +192,13 @@
                         android:gravity="center_horizontal"
                         android:orientation="vertical"
                         android:paddingVertical="6dp">
+
                         <ImageView
                             android:layout_width="44dp"
                             android:layout_height="44dp"
                             android:contentDescription="9.9元拼"
                             android:src="@drawable/nav_99" />
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -198,11 +215,13 @@
                         android:gravity="center_horizontal"
                         android:orientation="vertical"
                         android:paddingVertical="6dp">
+
                         <ImageView
                             android:layout_width="44dp"
                             android:layout_height="44dp"
                             android:contentDescription="领券"
                             android:src="@drawable/nav_coupon" />
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -219,11 +238,13 @@
                         android:gravity="center_horizontal"
                         android:orientation="vertical"
                         android:paddingVertical="6dp">
+
                         <ImageView
                             android:layout_width="44dp"
                             android:layout_height="44dp"
                             android:contentDescription="省钱"
                             android:src="@drawable/nav_save" />
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -240,11 +261,13 @@
                         android:gravity="center_horizontal"
                         android:orientation="vertical"
                         android:paddingVertical="6dp">
+
                         <ImageView
                             android:layout_width="44dp"
                             android:layout_height="44dp"
                             android:contentDescription="全部"
                             android:src="@drawable/nav_all" />
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -267,210 +290,72 @@
                 android:textColor="@color/teal_700"
                 android:textSize="16sp" />
 
-            <!-- 商品列表 -->
+            <!-- 新品商品列表（动态加载） -->
             <LinearLayout
+                android:id="@+id/ll_new_goods"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="4dp">
+                android:padding="4dp" />
 
-                <!-- 第一行 -->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="4dp"
-                    android:orientation="horizontal">
+            <!-- 热销商品 标题 -->
+            <TextView
+                android:id="@+id/tv_hot_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:gravity="center"
+                android:paddingVertical="16dp"
+                android:text="— 热销商品 —"
+                android:textColor="@color/teal_700"
+                android:textSize="16sp"
+                android:visibility="gone" />
 
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="2dp"
-                        android:layout_weight="1"
-                        android:background="@android:color/white"
-                        android:orientation="vertical">
+            <!-- 热销商品列表（动态加载） -->
+            <LinearLayout
+                android:id="@+id/ll_hot_goods"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="4dp" />
 
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="170dp"
-                            android:contentDescription="华为 Mate50 Pro"
-                            android:scaleType="centerCrop"
-                            android:src="@drawable/banner_placeholder" />
+            <!-- 推荐商品 标题 -->
+            <TextView
+                android:id="@+id/tv_recommend_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:gravity="center"
+                android:paddingVertical="16dp"
+                android:text="— 为你推荐 —"
+                android:textColor="@color/teal_700"
+                android:textSize="16sp"
+                android:visibility="gone" />
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            android:padding="8dp">
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:ellipsize="end"
-                                android:lines="2"
-                                android:text="【旗舰新品】HUAWEI/华为Mate50 Pro 昆仑破晓 新品5G手机"
-                                android:textColor="#333333"
-                                android:textSize="13sp" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="6dp"
-                                android:text="¥ 7899"
-                                android:textColor="@color/teal_700"
-                                android:textSize="15sp"
-                                android:textStyle="bold" />
-                        </LinearLayout>
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="2dp"
-                        android:layout_weight="1"
-                        android:background="@android:color/white"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="170dp"
-                            android:contentDescription="iPhone 14 Pro"
-                            android:scaleType="centerCrop"
-                            android:src="@drawable/banner_placeholder" />
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            android:padding="8dp">
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:ellipsize="end"
-                                android:lines="2"
-                                android:text="iPhone 14 Pro 暗紫色 512G 全网通5G手机"
-                                android:textColor="#333333"
-                                android:textSize="13sp" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="6dp"
-                                android:text="¥ 10599"
-                                android:textColor="@color/teal_700"
-                                android:textSize="15sp"
-                                android:textStyle="bold" />
-                        </LinearLayout>
-                    </LinearLayout>
-                </LinearLayout>
-
-                <!-- 第二行 -->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="4dp"
-                    android:orientation="horizontal">
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="2dp"
-                        android:layout_weight="1"
-                        android:background="@android:color/white"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="170dp"
-                            android:contentDescription="华为 Mate50 Pro"
-                            android:scaleType="centerCrop"
-                            android:src="@drawable/banner_placeholder" />
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            android:padding="8dp">
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:ellipsize="end"
-                                android:lines="2"
-                                android:text="华为Mate50 Pro 昆仑霞光 新品5G手机"
-                                android:textColor="#333333"
-                                android:textSize="13sp" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="6dp"
-                                android:text="¥ 6799"
-                                android:textColor="@color/teal_700"
-                                android:textSize="15sp"
-                                android:textStyle="bold" />
-                        </LinearLayout>
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="2dp"
-                        android:layout_weight="1"
-                        android:background="@android:color/white"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="170dp"
-                            android:contentDescription="MacBook Pro"
-                            android:scaleType="centerCrop"
-                            android:src="@drawable/banner_placeholder" />
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            android:padding="8dp">
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:ellipsize="end"
-                                android:lines="2"
-                                android:text="Apple MacBook Pro 13英寸 M2芯片 8G 256G SSD 笔记本电脑"
-                                android:textColor="#333333"
-                                android:textSize="13sp" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="6dp"
-                                android:text="¥ 9999"
-                                android:textColor="@color/teal_700"
-                                android:textSize="15sp"
-                                android:textStyle="bold" />
-                        </LinearLayout>
-                    </LinearLayout>
-                </LinearLayout>
-            </LinearLayout>
+            <!-- 推荐商品列表（动态加载） -->
+            <LinearLayout
+                android:id="@+id/ll_recommend_goods"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="4dp" />
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 
-    <!-- 顶部导航栏（浮在轮播图上方，半透明） -->
     <LinearLayout
         android:id="@+id/ll_nav_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:minHeight="56dp"
         android:background="#0000796B"
         android:gravity="center_vertical"
+        android:minHeight="56dp"
         android:orientation="horizontal"
         android:paddingHorizontal="16dp">
 
         <ImageView
             android:layout_width="24dp"
             android:layout_height="24dp"
+            android:layout_marginStart="8dp"
             android:contentDescription="菜单"
             android:src="@drawable/ic_hamburger" />
 
@@ -501,13 +386,14 @@
                 android:textSize="14sp" />
 
             <LinearLayout
+                android:id="@+id/ll_search_bar"
                 android:layout_width="0dp"
-                android:layout_height="32dp"
+                android:layout_height="36dp"
                 android:layout_weight="1"
                 android:background="@drawable/bg_search_bar"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
-                android:paddingHorizontal="10dp">
+                android:paddingHorizontal="12dp">
 
                 <ImageView
                     android:layout_width="16dp"
@@ -516,10 +402,13 @@
                     android:src="@drawable/ic_search" />
 
                 <EditText
+                    android:id="@+id/et_search_home"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:background="@null"
+                    android:clickable="false"
+                    android:focusable="false"
                     android:hint="搜索商品"
                     android:imeOptions="actionSearch"
                     android:inputType="text"
@@ -535,6 +424,7 @@
             android:id="@+id/tv_login"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
             android:text="登录"
             android:textColor="@color/teal_700"
             android:textSize="16sp" />

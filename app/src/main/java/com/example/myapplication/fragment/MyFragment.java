@@ -18,6 +18,7 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.fragment.app.Fragment;
 
 import com.example.myapplication.AccountActivity;
+import com.example.myapplication.AddressListActivity;
 import com.example.myapplication.LoginActivity;
 import com.example.myapplication.R;
 import com.example.myapplication.api.Api;
@@ -76,6 +77,18 @@ public class MyFragment extends Fragment {
                 startActivity(new Intent(requireContext(), LoginActivity.class));
             } else {
                 startActivity(new Intent(requireContext(), AccountActivity.class));
+            }
+        });
+
+        // 地址管理点击事件
+        View addressManage = view.findViewById(R.id.ll_address_manage);
+        addressManage.setOnClickListener(v -> {
+            String token = SPUtil.getToken(requireContext());
+            if (token == null || token.isEmpty()) {
+                Toast.makeText(requireContext(), "请先登录", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(requireContext(), LoginActivity.class));
+            } else {
+                startActivity(new Intent(requireContext(), AddressListActivity.class));
             }
         });
     }

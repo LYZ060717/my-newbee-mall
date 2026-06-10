@@ -78,8 +78,9 @@ public class HttpUtil {
 
             return readResponse(connection);
         } finally {
-            if (os != null) {
-                os.close();
+            try {
+                if (os != null) os.close();
+            } catch (IOException ignored) {
             }
             if (connection != null) {
                 connection.disconnect();

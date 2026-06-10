@@ -9,20 +9,13 @@
     <LinearLayout
         android:id="@+id/ll_title_bar"
         android:layout_width="match_parent"
-        android:layout_height="48dp"
+        android:layout_height="wrap_content"
+        android:minHeight="56dp"
         android:background="@android:color/white"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:paddingHorizontal="12dp">
-
-        <!-- 返回图标 -->
-        <ImageView
-            android:id="@+id/iv_back"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:contentDescription="返回"
-            android:padding="8dp"
-            android:src="@drawable/ic_back" />
+        android:paddingHorizontal="16dp"
+        android:paddingBottom="12dp">
 
         <!-- 标题居中 -->
         <TextView
@@ -31,18 +24,9 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="我的"
-            android:textColor="@color/black"
+            android:textColor="#333333"
             android:textSize="18sp"
             android:textStyle="bold" />
-
-        <!-- 更多图标 -->
-        <ImageView
-            android:id="@+id/iv_more"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:contentDescription="更多"
-            android:padding="8dp"
-            android:src="@drawable/ic_more" />
     </LinearLayout>
 
     <!-- 个人资料卡片 -->
@@ -198,8 +182,12 @@
 
         <!-- 地址管理 -->
         <LinearLayout
+            android:id="@+id/ll_address_manage"
             android:layout_width="match_parent"
             android:layout_height="48dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground"
             android:gravity="center_vertical"
             android:orientation="horizontal"
             android:paddingHorizontal="16dp">

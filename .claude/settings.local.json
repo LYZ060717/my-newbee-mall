@@ -9,7 +9,13 @@
       "Bash(grep -E \"\\\\.\\(jpg|jpeg|png|webp\\)$\")",
       "WebFetch(domain:github.com)",
       "WebSearch",
-      "Bash(git init *)"
+      "Bash(git init *)",
+      "Bash(git push *)",
+      "Bash(sort -t'\"' -k2)",
+      "Bash(uniq -d -f1)",
+      "Bash(awk -F'\"' '{print $2}')",
+      "Bash(awk '/getDistrictList/,/^    \\\\}/' D:/newbee-mall/citypicker/src/main/java/com/zaaach/citypicker/CityPicker.java)",
+      "Bash(git add *)"
     ]
   }
 }

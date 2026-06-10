@@ -27,6 +27,11 @@
         <activity android:name=".RegisterActivity" />
         <activity android:name=".AccountActivity" />
         <activity android:name=".ChangePasswordActivity" />
+        <activity android:name=".SearchActivity" />
+        <activity android:name=".SearchResultActivity" />
+        <activity android:name=".GoodsDetailActivity" />
+        <activity android:name=".AddressListActivity" />
+        <activity android:name=".AddressEditActivity" />
     </application>
 
 </manifest>

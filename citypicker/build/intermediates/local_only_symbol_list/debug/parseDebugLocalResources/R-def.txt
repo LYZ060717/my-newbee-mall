@@ -1,0 +1,21 @@
+R_DEF: Internal format may change without notice
+local
+anim cp_slide_in_bottom
+anim cp_slide_out_bottom
+color cp_color_primary
+color cp_color_primary_light
+id indicator
+id iv_check
+id rv_city
+id rv_district
+id rv_province
+id tv_cancel
+id tv_city
+id tv_confirm
+id tv_province
+id tv_title
+layout cp_dialog_city_picker
+layout cp_item_city
+layout cp_item_province
+style CityPickerAnimation
+style CityPickerDialogStyle
